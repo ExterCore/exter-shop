@@ -4,5 +4,5 @@
 
 [TEXT UI](https://github.com/ExterCore/exter-textui)
 
-INSPIRED BY AVILCHIIS
+INSPIRED BY 
 [AVILCHIIS](https://github.com/avilchiis/av_shops)
