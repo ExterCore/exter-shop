@@ -1,0 +1,1129 @@
+@font-face {
+  font-family: AkrobatBlack;
+  src: url('../fonts/Akrobat-Black.ttf');
+}
+
+@font-face {
+  font-family: AkrobatBold;
+  src: url('../fonts/Akrobat-Bold.ttf');
+}
+
+@font-face {
+  font-family: AkrobatExtraBold;
+  src: url('../fonts/Akrobat-ExtraBold.ttf');
+}
+
+
+@font-face {
+  font-family: AkrobatLight;
+  src: url('../fonts/Akrobat-Light.ttf');
+}
+
+@font-face {
+  font-family: AkrobatExtraLight;
+  src: url('../fonts/Akrobat-ExtraLight.ttf');
+}
+
+
+@font-face {
+  font-family: AkrobatRegular;
+  src: url('../fonts/Akrobat-Regular.ttf');
+}
+
+
+@font-face {
+  font-family: AkrobatSemiBold;
+  src: url('../fonts/Akrobat-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: AkrobatThin;
+  src: url('../fonts/Akrobat-Thin.ttf');
+}
+
+
+* {
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  overflow: hidden;
+  display: none;
+  zoom: 1.5;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+#box{
+  width: 100%;
+  height: 100%;
+  left: 56%;
+  display: none;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+#job-market{
+  display: none;
+  width: 50%;
+  height: 30%;
+  /* background-color: rgba(30 ,34, 44,0.95); */
+  position: absolute;
+  top: 66%;
+  left: 25%;
+}
+
+#bg{
+  display: block;
+  background-color: rgba(30 ,34, 44,0.95);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  z-index: 0;
+
+}
+
+#header{
+  color: rgb(39 211 170);
+  font-family: AkrobatBold;
+  font-size: 0.8rem;
+  margin-top: 153px;
+  margin-left: 151px;
+  text-shadow: 0px 0px 7px rgb(39 211 170);
+}
+
+#alt{
+  color: rgb(255, 255, 255,0.5);
+  font-family: AkrobatLight;
+  font-size: 0.55rem;
+  margin-top: -3px;
+  margin-left: 152px;
+}
+
+.fa-shop{
+  position: absolute;
+  color: rgb(39 ,211 ,170);
+  z-index: 4;
+  margin-top: 155px;
+  margin-left: 119px;
+  font-size: 20px !important;
+  text-shadow: 0px 0px 5px rgb(39 211 170);
+}
+
+#category{
+  width: 20rem;
+  height: 32rem;
+  position: absolute;
+  left: 6.2rem;
+  top: 9rem;
+  overflow: scroll;
+}
+
+#category::-webkit-scrollbar {
+  display: none;
+}
+
+#cart-box::-webkit-scrollbar {
+  display: none;
+}
+
+#item-box::-webkit-scrollbar {
+  display: none;
+}
+
+
+#MDMarkerDiv {
+    width: 15%;
+    height: 7%;
+    position: relative;
+    left: 11%;
+    top: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-direction: row;
+    gap: 10px;
+    z-index: calc();
+    margin-top: 1.1rem;
+    /* background-color: red; */
+}
+
+#MDMDLeftSide {
+    width: 25%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    /* background-color: blue; */
+}
+
+#MDMDLeftSide:hover .MDMDLDDiv1 {
+    transition: 0.5s;
+    cursor: pointer;
+    background: linear-gradient(134deg, rgba(1, 114, 97, 0.31) 14%, rgba(0, 0, 0, 0.00) 100.14%);
+}
+
+
+#MDMDLeftSide:hover .MDMDLDDiv2 {
+    transition: 0.5s;
+    cursor: pointer;
+    background: linear-gradient(124deg, #017261 14.38%, #017261 34.32%, #017261 50.36%, #017261 63.65%, #017261 99.97%);
+    box-shadow: 0px 4px 4px 0px rgba(1, 169, 143, 0.25);
+    color: rgb(0, 255, 195);
+}
+
+#MDMDLeftSide:hover .MDMDLDDiv3{
+    transition: 0.5s;
+    cursor: pointer;
+    background: linear-gradient(134deg, rgba(1, 114, 97, 0.31) 14%, rgba(0, 0, 0, 0.00) 100.14%);
+}
+
+#MDMDLeftSide:hover .categoryname{
+    transition: 0.5s;
+    cursor: pointer;
+    color: rgb(0, 255, 195);
+}
+
+#MDMDLeftSide:hover .categorydesc{
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+
+
+.MDMDLDDiv1 {
+  width: 30px;
+  height: 27px;
+  position: absolute;
+  left: -129%;
+  top: -0.2rem;
+  transform: rotate(-45deg);
+  border-radius: 3px;
+    background: linear-gradient(134deg, rgba(255, 255, 255, 0.25) 14%, rgba(0, 0, 0, 0.00) 100.14%);
+}
+
+.MDMDLDDiv2 {
+    width: 25px;
+    height: 24px;
+    position: absolute;
+    left: -35%;
+    top: -3%;
+    right: 0;
+    margin: auto;
+    transform: rotate(135deg);
+    border-radius: 3px;
+    background: linear-gradient(134deg, rgb(131, 131, 131,0.4) 14%, rgb(184, 184, 184,0.4) 34.06%, rgb(126, 124, 124,0.6) 50.21%, rgb(129, 129, 129,0.6) 63.59%, rgb(255, 255, 255,0.4) 100.14%);
+    box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+
+.MDMDLDDiv3 {
+  width: 155px;
+  height: 37px;
+  position: absolute;
+  right: 0;
+  left: 0.8rem;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 11% 50%);
+  top: -0.49rem;
+  border-radius: 3px;
+  background: linear-gradient(134deg, rgba(255, 255, 255, 0.25) 14%, rgba(0, 0, 0, 0.00) 100.14%);
+}
+
+.categoryname{
+  color: rgba(255, 255, 255);
+  font-family: AkrobatLight;
+  font-size: 0.55rem;
+  margin-top: -3px;
+  margin-left: 177px;
+  position: absolute;
+  left: -8.5rem;
+  top: 0rem;
+}
+
+.categorydesc{
+  color: rgb(255, 255, 255,0.5);
+  font-family: AkrobatLight;
+  font-size: 0.50rem;
+  margin-top: -3px;
+  margin-left: 177px;
+  position: absolute;
+  left: -8.5rem;
+  top: 0.9rem;
+  max-height: 0rem;
+  width: 7rem;
+}
+
+
+#item-box {
+  position: absolute;
+  width: 28.5rem;
+  top: 12rem;
+  overflow-y: auto;
+  left: 20rem;
+  height: 27rem;
+}
+
+
+.job-item-box::-webkit-scrollbar{
+  width: 0.1rem;
+  height: 0.1rem;
+  background-color: rgb(192, 45, 45);
+}
+
+.job-item-box::-webkit-scrollbar-thumb{
+  width: 0.1rem;
+  height: 0.1rem;
+  background-color: rgb(0, 255, 195);
+  border-radius: 1rem;
+}
+
+.job-item-box::-webkit-scrollbar-track{
+  background-color: rgb(43, 42, 42);
+}
+
+#item-box .item{
+  width:6rem;
+  transition-duration: 0.5s;
+  height: 7.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  margin-left: 0.8rem;
+  margin-top: 0.8rem;
+  flex-direction: row;
+  background: linear-gradient(to right, hsl(229.09deg 7.19% 30%), hsl(229.09deg 5.64% 38.24%), hsl(229.09deg 7.19% 30%));
+}
+
+
+#item-box .item .icon{
+  width: 0.3rem;
+  opacity: 0.6;
+  left: 0.2rem;
+  top: 0.2rem;
+  position: absolute;
+}
+
+#item-box .item .dollarbox{
+  width: 0.8rem;
+  height: 1rem;
+  position: absolute;
+  left: 3.5rem;
+  top: 0.2rem;
+  background-color: rgba(4, 211, 159, 0.471);
+}
+#item-box .item .moneybox{
+  width: 1.2rem;
+  height: 1rem;
+  position: absolute;
+  left: 4.5rem;
+  top: 0.2rem;
+  background-color: rgba(4, 211, 159, 0.471);
+}
+
+#item-box .item .dollaricon{
+  font-size: 0.5rem;
+  color: rgb(0, 255, 195,0.9);
+  position: absolute;
+  left: 3.76rem;
+  top: 0.4rem;
+  text-shadow: 0px 0px 5px rgb(0, 255, 195);
+}
+
+#item-box .item .itemoney{
+  font-size: 0.5rem;
+  color: rgb(0, 255, 195,0.9);
+  position: absolute;
+  left: 4.76rem;
+  top: 0.4rem;
+  font-family: AkrobatBold;
+  text-shadow: 0px 0px 5px rgb(0, 255, 195);
+}
+
+#item-box .itemalt{
+  width: 6rem;
+  height: 1.5rem;
+  position: absolute;
+  left: 0rem;
+  top: 6rem;
+  background-color: rgba(18, 19, 19, 0.471);
+}
+
+#item-box .itemalt .item-name{
+  font-size: 0.5rem;
+  color: rgb(255, 255, 255,0.9);
+  position: absolute;
+  left: 0.5rem;
+  top: 0.25rem;
+  font-family: AkrobatBold;
+}
+
+#item-box .itemalt .item-altcategory{
+  font-size: 0.4rem;
+  color: rgb(255, 255, 255,0.5);
+  position: absolute;
+  left: 0.5rem;
+  top: 0.8rem;
+  font-family: AkrobatLight;
+}
+
+#item-box .itemalthr{
+  width: 6rem;
+  position: absolute;
+  left: 0rem;
+  top: 7.5rem;
+  height: 0.1rem;
+  border: none;
+  background-color: rgb(85, 84, 84);
+  box-shadow: 0px 0px 5px rgb(85, 84, 84);
+}
+
+.cartbox{
+  padding: 0.6rem;
+  position: absolute;
+  left: 4.6rem;
+  top: 0.2rem;
+  border-radius: 1px;
+  background-color: hsl(240, 3%, 31%);
+}
+
+.cartbox i{
+  font-size: 0.7rem;
+  color: rgb(0, 255, 195,0.9);
+  position: absolute;
+  left: 0.2rem;
+  top: 0.26rem;
+  transition-duration: 0.5s;
+  text-shadow: 0px 0px 5px rgb(0, 255, 195);
+}
+
+.item .img{
+  width: 3rem;
+  height: 3rem;
+}
+
+.cart-text{
+  color: rgb(255, 255, 255,0.7);
+  font-family: AkrobatBold;
+  font-size: 0.7rem;
+  position: absolute;
+  left: 49.5rem;
+  top: 11.5rem;
+}
+
+#cart-box{
+  width: 12rem;
+  height: 22.5rem;
+  position: absolute;
+  left: 49.5rem;
+  top: 11.5rem;
+  overflow: hidden scroll;
+}
+
+.job-cart-box{
+  width: 12rem;
+  height: 11.5rem;
+  position: absolute;
+  left: 0rem;
+  top: 0rem;
+  overflow: hidden scroll;
+}
+
+.payment-text{
+  color: rgb(0, 255, 195,0.9);
+  text-shadow: 0px 0px 5px rgb(0, 255, 195);
+  font-family: AkrobatBold;
+  font-size: 0.7rem;
+  position: absolute;
+  left: 49.5rem;
+  top: 34.5rem;
+}
+
+.total-text{
+  color: rgba(173, 171, 171, 0.5);
+  font-family: AkrobatBold;
+  font-size: 0.6rem;
+  position: absolute;
+  left: 49.5rem;
+  top: 35.5rem;
+}
+
+#total-price{
+  color: rgb(0, 255, 195,0.9);
+  font-family: AkrobatBold;
+  font-size: 0.7rem;
+  position: absolute;
+  left: 60.5rem;
+  top: 34.55rem;
+}
+
+.bank-text{
+  color: rgb(255, 255, 255,0.7);
+  font-family: AkrobatBold;
+  font-size: 0.6rem;
+  position: absolute;
+  background-color: rgb(17, 17, 17);
+  left: 49.5rem;
+  top: 36.6rem;
+  padding: 0.2rem 1.6rem;
+  transition-duration: 0.5s;
+}
+
+.cash-text{
+  color: rgb(255, 255, 255,0.7);
+  font-family: AkrobatBold;
+  font-size: 0.6rem;
+  position: absolute;
+  background-color: rgb(17, 17, 17);
+  left: 57.7rem;
+  top: 36.6rem;
+  padding: 0.2rem 0.5rem;
+  transition-duration: 0.5s;
+}
+
+.bank-text:hover{
+  transform: scale(1.05);
+  cursor: pointer;
+  background-color: rgb(17, 17, 17);
+}
+
+.cash-text:hover{
+  transform: scale(1.05);
+  cursor: pointer;
+  background-color: rgb(17, 17, 17);
+}
+
+.newcashtext:hover{
+  transform: scale(1.05);
+  cursor: pointer;
+  background-color: rgb(17, 17, 17);
+}
+
+.job-cart-item{
+  width: 9rem;
+  height: 2rem;
+  position: relative;
+  left: 0.5rem;
+  overflow:visible;
+  margin-top: 0.5rem;
+  top: 1.5rem;
+  transition-duration: 0.5s;
+  background: linear-gradient(to right, hsl(229.09deg 8.94% 24.12%), hsl(234deg 6.94% 28.24%), hsl(229.09deg 8.94% 24.12%));
+}
+.cart-item{
+  width: 11.5rem;
+  height: 3rem;
+  position: relative;
+  left: 0rem;
+  overflow:visible;
+  margin-top: 0.5rem;
+  top: 1rem;
+  transition-duration: 0.5s;
+  background: linear-gradient(to right, hsl(229.09deg 8.94% 24.12%), hsl(234deg 6.94% 28.24%), hsl(229.09deg 8.94% 24.12%));
+}
+
+.item:hover{
+  transform: scale(1.1);
+  cursor: pointer;  
+  background: linear-gradient(to right, hsl(171.94deg 56.3% 23.33%), hsl(171.94deg 56.3% 23.33%));
+}
+
+.item:hover .itemalthr{
+  background-color: rgba(0, 255, 195,0.5);
+  box-shadow: 0px 0px 5px rgb(0, 255, 195);
+}
+
+.cartbox i:hover{
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.cart-item .cart-img img{
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0.2rem;
+  border: 1px solid rgba(127, 128, 127, 0.9);
+  position: absolute;
+  left: 0.6rem;
+  top: 0.6rem;
+}
+
+.cart-item .cart-name{
+  color: rgb(255, 255, 255,0.9);
+  font-family: AkrobatBold;
+  font-size: 0.7rem;
+  position: absolute;
+  left: 3.2rem;
+  top: 0.8rem;
+}
+
+.cart-item .cart-price{
+  color: rgb(0, 255, 195,0.9);
+  font-family: AkrobatBold;
+  font-size: 0.6rem;
+  position: absolute;
+  left: 3.2rem;
+  top: 1.8rem;
+}
+
+.cart-item .eksi-box{
+  padding: 0.001rem 0.45rem;
+  position: absolute;
+  left: 6.5rem;
+  top: 1.2rem;
+  cursor: pointer;
+  background-color: hsl(234deg 6.1% 32.16%);
+  transition-duration: 0.5s;
+}
+
+.cart-item .eksi-box:hover{
+  transform: scale(1.1);
+
+  background-color: hsl(234deg 6.1% 42.16%);
+}
+
+.cart-item .eksi-box .ex{
+  color: rgb(255, 255, 255,0.9);
+  font-family: AkrobatBold;
+  font-size: 1rem;
+}
+
+.cart-item .arti-box{
+  padding: 0.001rem 0.40rem;
+  position: absolute;
+  left: 7.9rem;
+  top: 1.2rem;
+  cursor: pointer;
+  background-color: hsl(170.4deg 47.17% 31.18%);
+  transition-duration: 0.5s;
+}
+
+.cart-item .arti-box:hover{
+  transform: scale(1.1);
+  background-color: hsl(170, 46%, 42%);
+}
+
+.cart-item .arti-box .arti{
+  color: hsl(165.22deg 84.49% 48.04%);
+  font-family: AkrobatBold;
+  font-size: 1rem;
+}
+
+.cart-item .delete-box{
+  padding: 0.17rem 0.35rem;
+  position: absolute;
+  left: 9.40rem;
+  top: 1.2rem;
+  cursor: pointer;
+  background-color: hsl(346.29deg 21.47% 31.96%);
+  transition-duration: 0.5s;
+}
+
+.cart-item .delete{
+  color: hsl(0deg 48.21% 49.22%);
+  font-family: AkrobatBold;
+  font-size: 0.7rem;
+}
+
+.cart-item .delete-box:hover{
+  transform: scale(1.1);
+  background-color: hsl(346.29deg 21.47% 41.96%);
+}
+
+.cart-item .cart-count{
+  padding: 0.07rem 0.25rem;
+  position: absolute;
+  left: 11rem;
+  top: -0.3rem;
+  font-size: 0.5rem;
+  cursor: pointer;
+  font-family: AkrobatBold;
+  background-color: hsl(164.54deg 83.59% 38.24%);
+  transition-duration: 0.5s;
+}
+
+.exit{
+  border-left: 1px solid rgb(255, 254, 254,0.1);
+  border-top: 1px solid rgb(255, 254, 254,0.1);
+  border-bottom: 1px solid rgb(255, 254, 254,0.1);
+  padding: 0.05rem 0.6rem;
+  font-size: 0.8rem;
+  color: rgb(255, 254, 254,0.4); 
+  margin-left: 56.69rem;
+  position: absolute;
+  margin-top: 9.45rem;
+  font-family: AkrobatLight;
+}
+
+.job-box{
+  width: 29.4rem;
+  border-radius: 1rem;
+  height: 14rem;
+  position: absolute;
+  left: 0rem;
+  top: 15rem;
+  overflow: hidden;
+  background: linear-gradient(334deg, rgba(30 ,34, 44,0.95) 4%, rgba(1, 114, 97, 0.91) 400%);
+}
+
+.job-cart-circle{
+  width: 10rem;
+  border-radius: 1rem;
+  height: 14rem;
+  position: absolute;
+  left: 30rem;
+  top: 15rem;
+  overflow: hidden;
+  background: linear-gradient(334deg, rgba(30 ,34, 44,0.95) 4%, rgba(1, 97, 114, 0.91) 400%);
+}
+
+.job-header{
+  color: rgb(255, 255, 255,0.9);
+  font-family: AkrobatBold;
+  font-size: 1.6rem;
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+}
+
+
+
+
+.job-item-box{
+  position: absolute;
+  top: 4rem;
+  width: 28rem;
+  overflow-x: scroll auto ;
+  overflow-y: hidden ;
+  left: 0.5rem;
+  height: 9.4rem;
+  display: flex;
+
+}
+
+
+.job-item-box .job-item{
+  flex: 0 0 100px;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  
+  width:6rem;
+  transition-duration: 0.5s;
+  height: 7.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  margin-left: 0.8rem;
+  margin-top: 0.8rem;
+  flex-direction: row;
+  background: linear-gradient(to right, hsl(229.09deg 7.19% 30%), hsl(229.09deg 5.64% 38.24%), hsl(229.09deg 7.19% 30%));
+}
+
+
+.job-item-box .job-item .job-icon{
+  width: 0.3rem;
+  opacity: 0.6;
+  left: 0.2rem;
+  top: 0.2rem;
+  position: absolute;
+}
+
+.job-item-box .job-item .job-dollarbox{
+  width: 0.8rem;
+  height: 1rem;
+  position: absolute;
+  left: 3.8rem;
+  top: 0.2rem;
+  background-color: rgba(4, 211, 159, 0.471);
+}
+.job-item-box .job-item .job-moneybox{
+  width: 1.2rem;
+  height: 1rem;
+  position: absolute;
+  left: 4.8rem;
+  top: 0.2rem;
+  background-color: rgba(4, 211, 159, 0.471);
+}
+
+.job-item-box .job-item .job-dollaricon{
+  font-size: 0.5rem;
+  color: rgb(0, 255, 195,0.9);
+  position: absolute;
+  left: 4.1rem;
+  top: 0.4rem;
+  text-shadow: 0px 0px 5px rgb(0, 255, 195);
+}
+
+.job-item-box .job-item .job-itemoney{
+  font-size: 0.5rem;
+  color: rgb(0, 255, 195,0.9);
+  position: absolute;
+  left: 5.1rem;
+  top: 0.4rem;
+  font-family: AkrobatBold;
+  text-shadow: 0px 0px 5px rgb(0 255 195)
+}
+
+.job-item-box .job-itemaltt{
+  width: 6.25rem;
+  height: 1.5rem;
+  position: absolute;
+  left: 0rem;
+  top: 6rem;
+  background-color: rgba(18, 19, 19, 0.471);
+}
+
+.job-item-box .job-itemaltt .job-item-name{
+  font-size: 0.5rem;
+  color: rgb(255, 255, 255,0.9);
+  position: absolute;
+  left: 0.5rem;
+  top: 0.25rem;
+  font-family: AkrobatBold;
+}
+
+.job-item-box .job-itemaltt .job-item-altcategory{
+  font-size: 0.4rem;
+  color: rgb(255, 255, 255,0.5);
+  position: absolute;
+  left: 0.5rem;
+  top: 0.8rem;
+  font-family: AkrobatLight;
+}
+
+.job-item-box .job-itemalthr{
+  width: 6.2rem;
+  position: absolute;
+  left: 0rem;
+  top: 7.5rem;
+  height: 0.1rem;
+  border: none;
+  background-color: rgb(85, 84, 84);
+  box-shadow: 0px 0px 5px rgb(85, 84, 84);
+}
+
+
+.job-item .job-img{
+  width: 3rem;
+  height: 3rem;
+}
+
+
+.job-cartbox{
+  padding: 0.6rem;
+  position: absolute;
+  left: 4.6rem;
+  top: 0.2rem;
+  border-radius: 1px;
+  background-color: hsl(240, 3%, 31%);
+}
+
+.job-cartbox i{
+  font-size: 0.7rem;
+  color: rgb(0, 255, 195,0.9);
+  position: absolute;
+  left: 0.2rem;
+  top: 0.26rem;
+  transition-duration: 0.5s;
+  text-shadow: 0px 0px 5px rgb(0, 255, 195);
+}
+
+.job-cartbox i:hover{
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.job-cart-header{
+  color: rgb(255, 255, 255,0.9);
+  font-family: AkrobatBold;
+  font-size: 0.7rem;
+  position: absolute;
+  left: 0.5rem;
+  top: 0.8rem;
+}
+
+.job-cart-payment{
+  color: rgb(0, 255, 195,0.9);
+  font-family: AkrobatBold;
+  font-size: 0.6rem;
+  position: absolute;
+  left: 0.5rem;
+  top: 10.8rem;
+  text-shadow: 0px 0px 5px rgb(0, 255, 195);
+}
+
+.job-cart-total{
+  color: rgba(173, 171, 171, 0.5);
+  font-family: AkrobatLight;
+  font-size: 0.6rem;
+  position: absolute;
+  left: 0.5rem;
+  top: 11.5rem;
+  text-shadow: 0px 0px 5px rgb(100, 100, 100);
+}
+
+.job-cart-price{
+  color: rgb(0, 255, 195,0.9);
+  font-family: AkrobatBold;
+  font-size: 0.6rem;
+  position: absolute;
+  left: 8.5rem;
+  text-shadow: 0px 0px 5px rgb(0, 255, 195);
+  top: 10.8rem;
+}
+
+
+.job-cart-item .cart-img img{
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0.2rem;
+  /* border: 1px solid rgba(127, 128, 127, 0.9); */
+  position: absolute;
+  left: 0.2rem;
+  top: 0rem;
+}
+
+.job-cart-item .cart-name{
+  color: rgb(255, 255, 255,0.9);
+  font-family: AkrobatBold;
+  font-size: 0.5rem;
+  position: absolute;
+  left: 2.3rem;
+  top: 0.2rem;
+}
+
+.job-cart-item .cart-price{
+  color: rgb(0, 255, 195,0.9);
+  font-family: AkrobatBold;
+  font-size: 0.5rem;
+  position: absolute;
+  left: 2.3rem;
+  top: 1rem;
+}
+
+.job-cart-item .eksi-box{
+  padding: 0.001rem 0.45rem;
+  position: absolute;
+  left: 4rem;
+  top: 0.5rem;
+  cursor: pointer;
+  background-color: hsl(234deg 6.1% 32.16%);
+  transition-duration: 0.5s;
+}
+
+.job-cart-item .eksi-box:hover{
+  transform: scale(1.1);
+
+  background-color: hsl(234deg 6.1% 42.16%);
+}
+
+.job-cart-item .eksi-box .ex{
+  color: rgb(255, 255, 255,0.9);
+  font-family: AkrobatBold;
+  font-size: 1rem;
+}
+
+.job-cart-item .arti-box{
+  padding: 0.001rem 0.40rem;
+  position: absolute;
+  left: 5.5rem;
+  top: 0.5rem;
+  cursor: pointer;
+  background-color: hsl(170.4deg 47.17% 31.18%);
+  transition-duration: 0.5s;
+}
+
+.job-cart-item .arti-box:hover{
+  transform: scale(1.1);
+  background-color: hsl(170, 46%, 42%);
+}
+
+.job-cart-item .arti-box .arti{
+  color: hsl(165.22deg 84.49% 48.04%);
+  font-family: AkrobatBold;
+  font-size: 1rem;
+}
+
+.job-cart-item .delete-box{
+  padding: 0.17rem 0.35rem;
+  position: absolute;
+  left: 7rem;
+  top: 0.5rem;
+  cursor: pointer;
+  background-color: hsl(346.29deg 21.47% 31.96%);
+  transition-duration: 0.5s;
+}
+
+.job-cart-item .delete{
+  color: hsl(0deg 48.21% 49.22%);
+  font-family: AkrobatBold;
+  font-size: 0.7rem;
+}
+
+.job-cart-item .delete-box:hover{
+  transform: scale(1.1);
+  background-color: hsl(346.29deg 21.47% 41.96%);
+}
+
+.job-cart-item .cart-count{
+  padding: 0.07rem 0.25rem;
+  position: absolute;
+  left: 8.3rem;
+  top: -0.5rem;
+  font-size: 0.5rem;
+  cursor: pointer;
+  font-family: AkrobatBold;
+  background-color: hsl(164.54deg 83.59% 38.24%);
+  transition-duration: 0.5s;
+}
+
+#job-market .jobhr{
+  width: 19.4rem;
+  position: absolute;
+  left: 7rem;
+  top: 2.5rem;
+  height: 0.1rem;
+  border: none;
+  /* background-color: rgb(85, 84, 84); */
+  background: linear-gradient(134deg, rgba(253, 255, 255, 0.31) 14%, rgba(0, 0, 0, 0.00) 95.14%);
+  /* box-shadow: 0px 0px 5px rgb(85, 84, 84); */
+}
+
+.job-category-item{
+  flex: 0 0 69px;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+  height: 1.2rem;
+  position: relative;
+  left: 0.5rem;
+  top: 0.7rem;
+  float: left;
+  border-top-right-radius: 0.2rem;
+  border-top-left-radius: 0.2rem;
+  overflow: visible;
+  margin-top: 0.5rem;
+  margin-left: 0.4rem;
+  transition-duration: 0.5s;
+  background-color: hsl(177.43deg 59.32% 23.14%);
+}
+
+.job-category-item:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+  background-color: hsl(177.43deg 59.32% 33.14%);
+}
+
+#job-market .job-category{
+  width: 18rem;
+  height: 2.5rem;
+  position: absolute;
+  overflow-x: hidden;
+  left: 6.4rem;
+  overflow:hidden;
+  /* background: red; */
+  display: flex;
+}
+
+.job-itemalt{
+  width: 4.5rem;
+  height: 0.1rem;
+  position: absolute;
+  left: -0.1rem;
+  border-radius: 0.5rem;
+  top: 1.2rem;
+  background-color: hsl(164.54deg 83.59% 38.24%);
+  box-shadow: 0px 0px 7px rgb(39 211 170);
+}
+
+.job-category-name{
+  color: rgb(39 211 170);
+  font-family: AkrobatBold;
+  font-size: 0.5rem;
+  position: absolute;
+  left: 1.35rem;
+  text-transform: uppercase;
+  top: 0.45rem;
+}
+
+
+.job-item:hover{
+  transform: scale(1.1);
+  cursor: pointer;  
+  background: linear-gradient(to right, hsl(171.94deg 56.3% 23.33%), hsl(171.94deg 56.3% 23.33%));
+}
+
+.job-item:hover .job-itemalthr{
+  background-color: rgba(0, 255, 195,0.5);
+  box-shadow: 0px 0px 5px rgb(0, 255, 195);
+}
+
+.job-text-box{
+  position: absolute;
+  left: 25.5rem;
+  top: 1.3rem;
+  overflow: hidden;
+  color: rgb(12 179 139);
+  font-family: AkrobatBold;
+  font-size: 0.7rem;
+  text-shadow: 0px 0px 5px rgb(12 179 139);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.1rem;
+  background-color: rgb(22 66 69);
+}
+
+.newcashtext{
+    color: rgb(255, 255, 255,0.5);
+    font-family: AkrobatBold;
+    font-size: 0.6rem;
+    position: absolute;
+    background-color: rgb(17, 17, 17);
+    left: 0.5rem;
+    top: 12.5rem;
+    padding: 0.2rem 1rem;
+    transition-duration: 0.5s;
+}
+
+.newcashtext2{
+  color: rgb(255, 255, 255,0.5);
+  font-family: AkrobatBold;
+  font-size: 0.6rem;
+  position: absolute;
+  background-color: rgb(17, 17, 17);
+  left: 4rem;
+  top: 12.5rem;
+  padding: 0.2rem 1rem;
+  transition-duration: 0.5s;
+}
+
+.newcashtext2:hover{
+  transform: scale(1.05);
+  cursor: pointer;
+  background-color: rgb(17, 17, 17);
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://use.fontawesome.com/e5864653ea.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.1/css/all.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <title>exter-Shop</title>
+  </head>
+
+  <body id="body">
+    <div id="bg"></div>
+    <!-- <div class="deleted">
+      <img src="../images/zi.png" alt="">
+    </div> -->
+    <div id="box">
+      <div class="exit">Close</div>
+      <div class="exit" style="padding: 0.09rem 0.6rem;margin-left: 58.95rem;background-color: rgb(255, 254, 254,0.1);border: none;">ESC</div>
+   
+      <i class="fa-solid fa-shop"></i>
+      <div id="header">Ammunation</div>
+      <div id="alt">Gun Club</div>
+
+      <div id="category">
+        <div id="MDMarkerDiv">
+          <div id="MDMDLeftSide">
+              <div class="MDMDLDDiv1"></div>
+              <div class="MDMDLDDiv2">
+                  <i style="transform: rotate(-135deg); font-size: 10px;" class="fad fa-building"></i>
+              </div>
+              <div class="categoryname">Weapons</div>
+              <div class="categorydesc">But i didnt shoot no deputy</div>
+              <div class="MDMDLDDiv3">
+              </div>
+          </div>
+        </div> 
+      </div>
+
+      <div id="item-box">
+        <div class="item">
+          <img class="icon" src="../images/miniicon.png" alt="">
+          <div class="dollarbox">
+          </div>
+          <i class="fa-solid fa-dollar-sign dollaricon"></i>
+          <div class="itemoney">250</div>
+          <div class="moneybox"></div>
+          <img class="img" src="../images/weapon_knife.png" alt="">
+          <div class="itemalt">
+            <div class="item-name">Knife</div>
+            <div class="item-altcategory">Weapons</div>
+            <div class="cartbox">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+          </div>
+          <hr class="itemalthr">
+        </div>
+
+        
+      </div>
+
+      <div class="cart-text">Basket</div>
+      <div id="cart-box">
+        <!-- <div class="cart-item">
+          <div class="cart-img">
+            <img src="../images/weapon_carbinerifle.png" alt="">
+          </div>
+          <div class="cart-name">Knife</div>
+          <div class="cart-price">$5</div>
+            <div class="cart-count">x3</div>  
+          <div class="eksi-box">
+              <div class="ex">-</div>
+            </div>
+            <div class="arti-box">
+              <div class="arti">+</div>
+            </div>
+            <div class="delete-box">
+              <div class="delete">
+                <i class="fas fa-trash-alt"></i>
+              </div>
+            </div>
+        </div> -->
+      </div>
+      <div class="payment-text">Payment</div>
+      <div class="total-text">Total Price</div>
+      <div id="total-price">$15</div>
+      <div class="bank-text pay" onclick="clFunc('makePayment', 'bank')">Bank</div>
+      <div class="cash-text pay" onclick="clFunc('makePayment', 'cash')">Cash</div>
+    </div>
+    <div id="job-market">
+      <div class="job-box">
+        <!-- <div class="job-text-box">News</div> -->
+        <div class="jobhr"></div>
+        <div id="scrollBox" class="job-category">
+          <div class="job-category-item">
+            <div class="job-category-name">News Equipment</div>
+            <div class="job-itemalt"></div>
+          </div>
+        </div>
+        <div class="job-header" id="job-header">Earl <span style="font-family: AkrobatExtraLight;">Angle</span></div>
+        <div id="jobscroll" class="job-item-box">
+
+       
+          <div class="job-item">
+            <img class="job-icon" src="../images/miniicon.png" alt="">
+            <div class="job-dollarbox">
+            </div>
+            <i class="fa-solid fa-dollar-sign job-dollaricon"></i>
+            <div class="job-itemoney">250</div>
+            <div class="job-moneybox"></div>
+            <img class="job-img" src="../images/weapon_knife.png" alt="">
+            <div class="job-itemaltt">
+              <div class="job-item-name">Knife</div>
+              <div class="job-item-altcategory">Weapons</div>
+              <div class="job-cartbox">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+            </div>
+            <hr class="job-itemalthr">
+          </div>
+        </div>
+
+      </div>
+      <div class="job-cart-circle">
+        <div class="job-cart-header">Basket</div>
+        <div class="job-cart-payment">Payment</div>
+        <div class="job-cart-total">Total Price</div>
+        <div class="job-cart-price" id="job-cart-price">$0</div>
+        <div class="newcashtext pay" onclick="clFunc('makePaymentJob', 'cash')">Cash</div>
+        <div class="newcashtext2 pay" onclick="clFunc('makePaymentJob', 'bank')">Bank</div>
+
+        <div class="job-cart-box" id="job-cart-box">
+          <!-- <div class="job-cart-item">
+            <div class="cart-img">
+              <img src="../images/weapon_carbinerifle.png" alt="">
+            </div>
+            <div class="cart-name">Knife</div>
+            <div class="cart-price">$5</div>
+              <div class="cart-count">x3</div>  
+            <div class="eksi-box">
+                <div class="ex">-</div>
+              </div>
+              <div class="arti-box">
+                <div class="arti">+</div>
+              </div>
+              <div class="delete-box">
+                <div class="delete">
+                  <i class="fas fa-trash-alt"></i>
+                </div>
+              </div>
+          </div> -->
+        </div>
+
+      </div>
+    </div>
+
+  </body>
+
+
+</html>
+<script src="./index.js" type="text/javascript"></script>
