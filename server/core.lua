@@ -83,7 +83,6 @@ function AddItem(source, name, amount, metadata)
         local hasQs = GetResourceState('qs-inventory') == 'started'
         local hasEsx = GetResourceState('esx_inventoryhud') == 'started'
         local hasOx = GetResourceState('ox_inventory') == 'started'
-        local hasPa = GetResourceState('ox_inventory') == 'started'
 
         if hasQs then
             return exports['qs-inventory']:AddItem(source, name, amount, false, metadata)
@@ -91,8 +90,6 @@ function AddItem(source, name, amount, metadata)
             return player.addInventoryItem(name, amount)
         elseif hasOx then
             return exports["ox_inventory"]:AddItem(source, name, amount, metadata)
-        elseif hasPa then
-            exports['ox_inventory']:AddItem(source, name, amount)
         else
             --CUSTOM INVENTORY ADD ITEM FUNCTION HERE
         end
