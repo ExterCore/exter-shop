@@ -3,7 +3,7 @@ game 'gta5'
 lua54 "yes"
 author 'sobing'
 
-version '1.1'
+version '1.2'
 
 decription 'exter-shop like nopixel 4.0'
 
