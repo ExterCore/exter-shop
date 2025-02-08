@@ -82,7 +82,14 @@ window.addEventListener('message', function(event) {
 	} else if (ed.action === "updateBasket") {
         document.getElementById("cart-box").innerHTML = "";
         totalBasketPrice = 0;
-        console.log("Reset totalBasketPrice ke 0 di updateBasket");
+
+	    if (document.querySelectorAll(".cart-item").length === 0) {
+        totalBasketPrice = 0;
+        document.getElementById("total-price").innerHTML = "$0";
+        console.log("Keranjang masih kosong setelah updateBasket, reset total harga lagi.");
+    } else {
+        document.getElementById("total-price").innerHTML = "$" + totalBasketPrice;
+    }
         ed.basket.forEach(function(data, index) {
             totalBasketPrice = totalBasketPrice + data.totalPrice;
             document.getElementById("total-price").innerHTML="$" + totalBasketPrice;
@@ -242,7 +249,7 @@ function clFunc(name1, name2, name3, name4, name5) {
             document.getElementById("total-price").innerHTML = "$0";
             console.log("Keranjang kosong, total harga direset ke 0");
         }
-    }, 100); // Delay sedikit untuk memastikan DOM sudah update
+    }, 200); // Delay sedikit untuk memastikan DOM sudah update
     } else if (name1 === "deleteItemFromBasketJob") {
         var xhr = new XMLHttpRequest();
         xhr.open("POST", `https://${resourceName}/deleteItemFromBasketJob`, true);
