@@ -2,6 +2,9 @@ fx_version 'cerulean'
 game 'gta5'
 lua54 "yes"
 author 'sobing'
+
+version '1.1'
+
 decription 'exter-shop like nopixel 4.0'
 
 ui_page 'html/index.html'
