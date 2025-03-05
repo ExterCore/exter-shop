@@ -81,28 +81,27 @@ function createPeds()
             SetBlockingOfNonTemporaryEvents(b.ped, true)
             SetModelAsNoLongerNeeded(pedHash2)
             pedSpawned = true
-            if Config.UseTextUI == false then
-                if v.type == "job" then
-                    exports['qb-target']:AddTargetEntity(b.ped, {
-                        options = {
-                            {
-                                label = v.name .. ' | ' .. v.label,
-                                icon = 'fa-solid fa-basket-shopping',
-                                job = v.jobName,
-                                action = function()
-                                    openShop(v.name, v.label, v.categories, v.type)
-                                end
-                            }
-                        },
-                        distance = 3.0
+            if not Config.UseTextUI then
+                if Config.Target == "ox" then
+                    exports['ox_target']:addLocalEntity(b.ped, {
+                        {
+                            name = v.name,
+                            label = v.label,
+                            icon = 'fa-solid fa-basket-shopping',
+                            distance = 3.0,
+                            groups = v.type == "job" and { [v.jobName] = 0 } or nil,
+                            onSelect = function()
+                                openShop(v.name, v.label, v.categories, v.type)
+                            end
+                        }
                     })
-                else
-                    
+                elseif Config.Target == "qb" then
                     exports['qb-target']:AddTargetEntity(b.ped, {
                         options = {
                             {
-                                label = v.name .. ' | ' .. v.label,
+                                label = v.label,
                                 icon = 'fa-solid fa-basket-shopping',
+                                job = v.type == "job" and v.jobName or nil,
                                 action = function()
                                     openShop(v.name, v.label, v.categories, v.type)
                                 end
