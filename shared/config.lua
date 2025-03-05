@@ -1,7 +1,8 @@
 Config = {}
-Config.UseTextUI = true --only qb target false
+Config.UseTextUI = true --change it to false if you want to use the third eye
 Config.InventoryFolder = "nui://qb-inventory/html/images/"
-Config.Text = "textui2" --textui2
+Config.Text = "textui2" -- Leave this blank if you use it third eye
+Config.Target = "ox" -- qb or ox
 --ox nui://ox_inventory/web/images/
 --qs nui://qs-inventory/html/images/
 
