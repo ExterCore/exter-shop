@@ -17,7 +17,7 @@ Config.Notify = {
 
 Config.Shops = {
     {
-        name = "Market",
+        name = "Convenience Store",
         label = "7/24 Market",
         type = "normal",
         blip = true,
@@ -26,17 +26,35 @@ Config.Shops = {
         blipScale = 0.5,
         categories = {
             [1] = {
-                name = "General",
+                name = "Electronic",
                 description = "Needs",
                 items = {
-                    {name = "water_bottle", label = "Water", perPrice = 150, description = "Drinks"},
-                    {name = "sandwich", label = "Sandwich", perPrice = 150, description = "Food"},
-                    {name = "snikkel_candy", label = "Snikkel Candy", perPrice = 150, description = "General"},
-                    {name = "tosti", label = "Tosti", perPrice = 150, description = "General"},
-                    {name = "beer", label = "Beer", perPrice = 150, description = "General"},
-                    {name = "cola", label = "Cola", perPrice = 150, description = "General"},
-                    {name = "twerks_candy", label = "Twerks Candy", perPrice = 150, description = "General"},
-                    {name = "whiskey", label = "Whiskey", perPrice = 150, description = "General"},
+                    {name = "phone", label = "Phone", perPrice = 10000, description = "Electronic"},
+                    {name = "tablet", label = "tablet", perPrice = 5000, description = "Electronic"},
+                    {name = "radio", label = "Radio", perPrice = 8000, description = "Electronic"},
+                    {name = "powerbank", label = "powerbank", perPrice = 8000, description = "Electronic"},
+                }
+            },
+            [2] = {
+                name = "Food",
+                description = "Needs",
+                items = {
+                    {name = "donut", label = "donut", perPrice = 10000, description = "Food"},
+                    {name = "hotdog", label = "hotdog", perPrice = 10000, description = "Food"},
+                }
+            },
+            [3] = {
+                name = "Drink",
+                description = "Needs",
+                items = {
+                    {name = "coke_soda", label = "soda", perPrice = 10000, description = "Drink"},
+                }
+            },
+            [4] = {
+                name = "Other",
+                description = "Needs",
+                items = {
+                    {name = "books", label = "books", perPrice = 10000, description = "Other"},
                 }
             },
         },
@@ -55,7 +73,7 @@ Config.Shops = {
         }
     },
     {
-        name = "Market",
+        name = "Convenience Store",
         label = "LTD Gasoline",
         type = "normal",
         blip = true,
@@ -64,17 +82,35 @@ Config.Shops = {
         blipScale = 0.5,
         categories = {
             [1] = {
-                name = "General",
-                description = "24/7",
+                name = "Electronic",
+                description = "Needs",
                 items = {
-                    {name = "water_bottle", label = "Water", perPrice = 150, description = "Drinks"},
-                    {name = "sandwich", label = "Sandwich", perPrice = 150, description = "Food"},
-                    {name = "snikkel_candy", label = "Snikkel Candy", perPrice = 150, description = "General"},
-                    {name = "tosti", label = "Tosti", perPrice = 150, description = "General"},
-                    {name = "beer", label = "Beer", perPrice = 150, description = "General"},
-                    {name = "cola", label = "Cola", perPrice = 150, description = "General"},
-                    {name = "twerks_candy", label = "Twerks Candy", perPrice = 150, description = "General"},
-                    {name = "whiskey", label = "Whiskey", perPrice = 150, description = "General"},
+                    {name = "phone", label = "Phone", perPrice = 10000, description = "Electronic"},
+                    {name = "tablet", label = "tablet", perPrice = 5000, description = "Electronic"},
+                    {name = "radio", label = "Radio", perPrice = 8000, description = "Electronic"},
+                    {name = "powerbank", label = "powerbank", perPrice = 8000, description = "Electronic"},
+                }
+            },
+            [2] = {
+                name = "Food",
+                description = "Needs",
+                items = {
+                    {name = "donut", label = "donut", perPrice = 10000, description = "Food"},
+                    {name = "hotdog", label = "hotdog", perPrice = 10000, description = "Food"},
+                }
+            },
+            [3] = {
+                name = "Drink",
+                description = "Needs",
+                items = {
+                    {name = "coke_soda", label = "soda", perPrice = 10000, description = "Drink"},
+                }
+            },
+            [4] = {
+                name = "Other",
+                description = "Needs",
+                items = {
+                    {name = "books", label = "books", perPrice = 10000, description = "Other"},
                 }
             },
         },
@@ -89,7 +125,7 @@ Config.Shops = {
         }
     },
     {
-        name = "Market",
+        name = "Convenience Store",
         label = "Rob's Liqour",
         type = "normal",
         blip = true,
@@ -98,17 +134,35 @@ Config.Shops = {
         blipScale = 0.5,
         categories = {
             [1] = {
-                name = "General",
-                description = "24/7",
+                name = "Electronic",
+                description = "Needs",
                 items = {
-                    {name = "water_bottle", label = "Water", perPrice = 150, description = "Drinks"},
-                    {name = "sandwich", label = "Sandwich", perPrice = 150, description = "Food"},
-                    {name = "snikkel_candy", label = "Snikkel Candy", perPrice = 150, description = "General"},
-                    {name = "tosti", label = "Tosti", perPrice = 150, description = "General"},
-                    {name = "beer", label = "Beer", perPrice = 150, description = "General"},
-                    {name = "cola", label = "Cola", perPrice = 150, description = "General"},
-                    {name = "twerks_candy", label = "Twerks Candy", perPrice = 150, description = "General"},
-                    {name = "whiskey", label = "Whiskey", perPrice = 150, description = "General"},
+                    {name = "phone", label = "Phone", perPrice = 10000, description = "Electronic"},
+                    {name = "tablet", label = "tablet", perPrice = 5000, description = "Electronic"},
+                    {name = "radio", label = "Radio", perPrice = 8000, description = "Electronic"},
+                    {name = "powerbank", label = "powerbank", perPrice = 8000, description = "Electronic"},
+                }
+            },
+            [2] = {
+                name = "Food",
+                description = "Needs",
+                items = {
+                    {name = "donut", label = "donut", perPrice = 10000, description = "Food"},
+                    {name = "hotdog", label = "hotdog", perPrice = 10000, description = "Food"},
+                }
+            },
+            [3] = {
+                name = "Drink",
+                description = "Needs",
+                items = {
+                    {name = "coke_soda", label = "soda", perPrice = 10000, description = "Drink"},
+                }
+            },
+            [4] = {
+                name = "Other",
+                description = "Needs",
+                items = {
+                    {name = "books", label = "books", perPrice = 10000, description = "Other"},
                 }
             },
         },
@@ -123,44 +177,6 @@ Config.Shops = {
         }
     },
     {
-        name = "Hardware Store",
-        label = "Hardware",
-        type = "normal",
-        blip = true,
-        blipSprite = 59,
-        blipColor = 2,
-        blipScale = 0.5,
-        categories = {
-            [1] = {
-                name = "General",
-                description = "Hardware Tools",
-                items = {
-                    {name = "lockpick", label = "Lockpick", perPrice = 150, description = "Drinks"},
-                    {name = "weapon_wrench", label = "Wrench", perPrice = 150, description = "Food"},
-                    {name = "weapon_hammer", label = "Hammer", perPrice = 150, description = "General"},
-                    {name = "repairkit", label = "Repair Kit", perPrice = 150, description = "General"},
-                    {name = "screwdriverset", label = "Tool Set", perPrice = 150, description = "General"},
-                    {name = "phone", label = "Phone", perPrice = 150, description = "General"},
-                    {name = "radio", label = "Radio", perPrice = 150, description = "General"},
-                    {name = "firework1", label = "Firework XS", perPrice = 150, description = "General"},
-                    {name = "firework2", label = "Firework S", perPrice = 150, description = "General"},
-                    {name = "firework3", label = "Firework M", perPrice = 150, description = "General"},
-                    {name = "firework4", label = "Firework L", perPrice = 150, description = "General"},
-                    {name = "fitbit", label = "Fitbit", perPrice = 150, description = "General"},
-                    {name = "cleaningkit", label = "Cleaning Kit", perPrice = 150, description = "General"},
-                    {name = "advancedrepairkit", label = "Adv. Repair Kit", perPrice = 150, description = "General"},
-                }
-            },
-        },
-        pedHash = 'mp_m_shopkeep_01',
-        scenario = 'WORLD_HUMAN_STAND_MOBILE',
-        coords = {
-            {ped = nil, coords = vector4(45.68, -1749.04, 29.61, 53.13)},
-            {ped = nil, coords = vector4(2747.71, 3472.85, 55.67, 255.08)},
-            {ped = nil, coords = vector4(-421.83, 6136.13, 31.88, 228.2)},
-        }
-    },
-    {
         name = "Ammunation Store",
         label = "Weapons",
         type = "normal",
@@ -170,16 +186,26 @@ Config.Shops = {
         blipScale = 0.5,
         categories = {
             [1] = {
-                name = "General",
+                name = "FIRE",
                 description = "Ammunations",
                 items = {
-                    {name = "weapon_knife", label = "Knife", perPrice = 150, description = "General"},
-                    {name = "weapon_bat", label = "Bat", perPrice = 150, description = "General"},
-                    {name = "weapon_hatchet", label = "Hatchet", perPrice = 150, description = "General"},
-                    {name = "pistol_ammo", label = "Pistol Ammo", perPrice = 150, description = "General"},
-                    {name = "weapon_pistol", label = "Pistol", perPrice = 150, description = "General", requiredLicense = {'weapon'}},
-                    {name = "weapon_snspistol", label = "Sns Pistol", perPrice = 150, description = "General", requiredLicense = {'weapon'}},
-                    {name = "weapon_vintagepistol", label = "Vintage Pistol", perPrice = 150, description = "General", requiredLicense = {'weapon'}}
+                    {name = "weapon_pistol", label = "Pistol", perPrice = 50000, description = "FIRE", requiredLicense = {'weapon'}}
+                }
+            },
+            [2] = {
+                name = "MELEE",
+                description = "Ammunations",
+                items = {
+                    {name = "weapon_knife", label = "Knife", perPrice = 15000, description = "MELEE"},
+                    {name = "weapon_bat", label = "Bat", perPrice = 15000, description = "MELEE"},
+                    {name = "weapon_hatchet", label = "Hatchet", perPrice = 15000, description = "MELEE"},
+                }
+            },
+            [3] = {
+                name = "AMMO",
+                description = "Ammunations",
+                items = {
+                    {name = "ammo-9", label = "Pistol Ammo", perPrice = 500, description = "AMMO"},
                 }
             },
         },
@@ -195,56 +221,121 @@ Config.Shops = {
             {ped = nil, coords = vector4(253.63, -51.02, 69.94, 72.91)},
             {ped = nil, coords = vector4(-331.23, 6085.37, 31.45, 228.02)},
             {ped = nil, coords = vector4(1692.67, 3761.38, 34.71, 227.65)},
-            {ped = nil, coords = vector4(809.68, -2159.13, 29.62, 1.43)},
             {ped = nil, coords = vector4(-661.96, -933.53, 21.83, 177.05)},
         }
     },
     {
-        name = "Job Market",
-        label = "LSPD Ammunation",
+        name = "ICE",
+        label = "ICE",
+        type = "normal",
+        blip = false,
+        blipSprite = 59,
+        blipColor = 2,
+        blipScale = 0.5,
+        categories = {
+            [1] = {
+                name = "General",
+                description = "ICE",
+                items = {
+                    {name = "softscoopmix", label = "softscoopmix ", perPrice = 1000, description = "General"},
+                    {name = "smoothiemix", label = "smoothiemix", perPrice = 1000, description = "General"},
+                    {name = "vanilla", label = "vanilla", perPrice = 1000, description = "General"},
+                    {name = "chocolate", label = "chocolate", perPrice = 1000, description = "General"},
+                    {name = "strawberry", label = "strawberry", perPrice = 1000, description = "General"},
+                    {name = "mint", label = "mint", perPrice = 1000, description = "General"},
+                    {name = "pistachio", label = "pistachio", perPrice = 1000, description = "General"},
+                    {name = "butterscotch", label = "butterscotch", perPrice = 1000, description = "General"},
+                    {name = "saltedcaramel", label = "saltedcaramel", perPrice = 1000, description = "General"},
+                    {name = "bubblegum", label = "bubblegum", perPrice = 1000, description = "General"},
+                    {name = "toffee", label = "toffee", perPrice = 1000, description = "General"},
+                    {name = "cookiedough", label = "cookiedough", perPrice = 1000, description = "General"},
+                }
+            },
+        },
+        pedHash = 'mp_m_shopkeep_01',
+        scenario = 'WORLD_HUMAN_STAND_MOBILE',
+        coords = {
+            {ped = nil, coords = vector4(274.15, 132.58, 104.44, 162.44)},
+        }
+    },
+    {
+        name = "LEBAH",
+        label = "LEBAH",
+        type = "normal",
+        blip = false,
+        blipSprite = 59,
+        blipColor = 2,
+        blipScale = 0.5,
+        categories = {
+            [1] = {
+                name = "General",
+                description = "LEBAH",
+                items = {
+                    {name = "beehive", label = "beehive ", perPrice = 500, description = "General"},
+                }
+            },
+        },
+        pedHash = 'mp_m_shopkeep_01',
+        scenario = 'WORLD_HUMAN_STAND_MOBILE',
+        coords = {
+            {ped = nil, coords = vector4(1532.08, 1728.14, 109.91, 95.04)},
+        }
+    },
+    {
+        name = "PARAMEDIC",
+        label = "PARAMEDIC",
+        type = "normal",
+        blip = false,
+        blipSprite = 59,
+        blipColor = 2,
+        blipScale = 0.5,
+        categories = {
+            [1] = {
+                name = "OBAT",
+                description = "PARAMEDIC",
+                items = {
+                    {name = "bandage", label = "bandage", perPrice = 0, description = "OBAT"},
+                    {name = "painkillers", label = "painkillers", perPrice = 0, description = "OBAT"},
+                    {name = "firstaid", label = "firstaid", perPrice = 0, description = "OBAT"},
+                }
+            },
+            [2] = {
+                name = "ALAT",
+                description = "PARAMEDIC",
+                items = {
+                    {name = "weapon_flashlight", label = "SENTER ", perPrice = 0, description = "ALAT"},
+                    {name = "radio", label = "radio", perPrice = 0, description = "ALAT"},
+                    {name = "weapon_fireextinguisher", label = "weapon_fireextinguisher", perPrice = 0, description = "ALAT"},
+                }
+            },
+        },
+        pedHash = 'mp_m_shopkeep_01',
+        scenario = 'WORLD_HUMAN_STAND_MOBILE',
+        coords = {
+            {ped = nil, coords = vector4(-804.60, -1206.62, 7.34, 228.48)},
+        }
+    },
+    {
+        name = "STORE",
+        label = "STORE",
         type = "job",
-        jobName = "police",
+        jobName = "mechanic",
         blip = false,
         categories = {
             [1] = {
                 name = "General",
-                description = "24/7",
+                description = "STORE",
                 items = {
-                    {name = "pistol_ammo", label = "Pistol Ammo", perPrice = 150, description = "PD Items"},
-                    {name = "smg_ammo", label = "SMG Ammo", perPrice = 150, description = "PD Items"},
-                    {name = "rifle_ammo", label = "Rifle Ammo", perPrice = 150, description = "PD Items"},
-                    -- {name = "taserammo", label = "Taser Ammo", perPrice = 150, description = "PD Items"},
-                    {name = "handcuffs", label = "Handcuffs", perPrice = 150, description = "PD Items"},
-                    {name = "empty_evidence_bag", label = "Empty Evidence Bag", perPrice = 150, description = "PD Items"},
-                    {name = "police_stormram", label = "Storm Arm", perPrice = 150, description = "PD Items"},
-                    {name = "armor", label = "Armor", perPrice = 150, description = "PD Items"},
-                    {name = "radio", label = "Radio", perPrice = 150, description = "PD Items"},
-                    -- {name = "policespikes", label = "Spikes", perPrice = 150, description = "PD Items"},
-                    -- {name = "gps", label = "GPS", perPrice = 150, description = "PD Items"},
-                    {name = "body_cam", label = "Body Cam", perPrice = 150, description = "PD Items"},
-                    {name = "ifaks", label = "Ifak", perPrice = 150, description = "PD Items"},
-                    {name = "bandage", label = "Bandage", perPrice = 150, description = "PD Items"}
-                }
-            },
-            [2] = {
-                name = "Weapon",
-                description = "Ammunations",
-                items = {
-                    {name = "weapon_stungun", label = "Stun Gun", perPrice = 150, description = "PD Items"},
-                    {name = "weapon_glock", label = "Glock", perPrice = 150, description = "PD Items"},
-                    {name = "weapon_smg", label = "SMG", perPrice = 150, description = "PD Items"},
-                    {name = "weapon_combatpdw", label = "Combat PDW", perPrice = 150, description = "PD Items"},
-                    {name = "weapon_m4", label = "M4", perPrice = 150, description = "PD Items"},
-                    {name = "weapon_specialcarbine_mk2", label = "ScarL", perPrice = 150, description = "PD Items"},
-                    {name = "weapon_nightstick", label = "Nightstick", perPrice = 150, description = "PD Items"},
-                    {name = "weapon_flashlight", label = "FlashLight", perPrice = 150, description = "PD Items"},
+                    {name = "repairkit", label = "repairkit", perPrice = 1000, description = "STORE"},
+                    {name = "cleaningkit", label = "cleaningkit", perPrice = 100, description = "STORE"},
+                    {name = "racing_gps", label = "TabletRacing", perPrice = 100, description = "STORE"}
                 }
             },
         },
         pedHash = 'ig_andreas',
         scenario = 'WORLD_HUMAN_STAND_MOBILE',
         coords = {
-            {ped = nil, coords = vector4(482.58, -995.36, 30.69, 180.39)}
+            {ped = nil, coords = vector4(69.02, 6503.28, 31.26, 42.57)}
         }
     },
 }
