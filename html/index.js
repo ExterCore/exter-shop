@@ -82,14 +82,14 @@ window.addEventListener('message', function(event) {
 	} else if (ed.action === "updateBasket") {
         document.getElementById("cart-box").innerHTML = "";
         totalBasketPrice = 0;
-
-	    if (document.querySelectorAll(".cart-item").length === 0) {
-        totalBasketPrice = 0;
-        document.getElementById("total-price").innerHTML = "$0";
-        console.log("Keranjang masih kosong setelah updateBasket, reset total harga lagi.");
-    } else {
-        document.getElementById("total-price").innerHTML = "$" + totalBasketPrice;
-    }
+        if (document.querySelectorAll(".cart-item").length === 0) {
+            totalBasketPrice = 0;
+            document.getElementById("total-price").innerHTML = "$0";
+            console.log("Keranjang masih kosong setelah updateBasket, reset total harga lagi.");
+        } else {
+            document.getElementById("total-price").innerHTML = "$" + totalBasketPrice;
+        }
+        console.log("Reset totalBasketPrice ke 0 di updateBasket");
         ed.basket.forEach(function(data, index) {
             totalBasketPrice = totalBasketPrice + data.totalPrice;
             document.getElementById("total-price").innerHTML="$" + totalBasketPrice;
@@ -116,34 +116,45 @@ window.addEventListener('message', function(event) {
             appendHtml(document.getElementById("cart-box"), basketHTML);
         });
     } else if (ed.action === "updateBasketJob") {
-        document.getElementById("job-cart-box").innerHTML="";
+        const jobCartBox = document.getElementById("job-cart-box");
+        const jobCartPrice = document.getElementById("job-cart-price");
+    
+        jobCartBox.innerHTML = "";
         totalBasketPriceJob = 0;
-        ed.basket.forEach(function(data, index) {
-            totalBasketPriceJob = totalBasketPriceJob + data.totalPrice;
-            document.getElementById("job-cart-price").innerHTML="$" + totalBasketPriceJob;
-            var basketHTML = `
-            <div class="job-cart-item">
-                <div class="cart-img">
-                <img src="${folder}${data.name}.png" alt="">
-                </div>
-                <div class="cart-name">${data.label}</div>
-                <div class="cart-price">$${data.totalPrice}</div>
-                <div class="cart-count">x${data.amount}</div>  
-                <div class="eksi-box" onclick="clFunc('removeOneBasketJob', '${data.name}')">
-                    <div class="ex">-</div>
-                </div>
-                <div class="arti-box" onclick="clFunc('addBasketMoreJob', '${data.name}')">
-                    <div class="arti">+</div>
-                </div>
-                <div class="delete-box" onclick="clFunc('deleteItemFromBasketJob', '${data.name}')">
-                    <div class="delete">
-                    <i class="fas fa-trash-alt"></i>
+        jobCartPrice.innerHTML = "$0"; // reset dulu harganya
+    
+        if (Array.isArray(ed.basket) && ed.basket.length > 0) {
+            ed.basket.forEach(function(data) {
+                if (!data || typeof data.totalPrice !== "number") return;
+    
+                totalBasketPriceJob += data.totalPrice;
+                jobCartPrice.innerHTML = "$" + totalBasketPriceJob;
+    
+                const basketHTML = `
+                <div class="job-cart-item">
+                    <div class="cart-img">
+                        <img src="${folder}${data.name}.png" alt="">
                     </div>
-                </div>
-            </div>`;
-            appendHtml(document.getElementById("job-cart-box"), basketHTML);
-        });
-    }
+                    <div class="cart-name">${data.label}</div>
+                    <div class="cart-price">$${data.totalPrice}</div>
+                    <div class="cart-count">x${data.amount}</div>  
+                    <div class="eksi-box" onclick="clFunc('removeOneBasketJob', '${data.name}')">
+                        <div class="ex">-</div>
+                    </div>
+                    <div class="arti-box" onclick="clFunc('addBasketMoreJob', '${data.name}')">
+                        <div class="arti">+</div>
+                    </div>
+                    <div class="delete-box" onclick="clFunc('deleteItemFromBasketJob', '${data.name}')">
+                        <div class="delete">
+                            <i class="fas fa-trash-alt"></i>
+                        </div>
+                    </div>
+                </div>`;
+                
+                appendHtml(jobCartBox, basketHTML);
+            });
+        }
+    }    
     document.onkeyup = function(data) {
 		if (data.which == 27 && shopOpen) {
             shopOpen = false;
@@ -243,13 +254,15 @@ function clFunc(name1, name2, name3, name4, name5) {
         xhr.open("POST", `https://${resourceName}/deleteItemFromBasket`, true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.send(JSON.stringify({name: name2}));
-	        setTimeout(() => {
-        if (document.querySelectorAll(".cart-item").length === 0) {
-            totalBasketPrice = 0;
-            document.getElementById("total-price").innerHTML = "$0";
-            console.log("Keranjang kosong, total harga direset ke 0");
-        }
-    }, 200); // Delay sedikit untuk memastikan DOM sudah update
+    
+        // Paksa reset harga kalau keranjang kosong
+        setTimeout(() => {
+            if (document.querySelectorAll(".cart-item").length === 0) {
+                totalBasketPrice = 0;
+                document.getElementById("total-price").innerHTML = "$0";
+                console.log("Total harga direset ke $0 dengan delay untuk memastikan UI update.");
+            }
+        }, 200); // Delay sedikit untuk memastikan DOM sudah update
     } else if (name1 === "deleteItemFromBasketJob") {
         var xhr = new XMLHttpRequest();
         xhr.open("POST", `https://${resourceName}/deleteItemFromBasketJob`, true);
