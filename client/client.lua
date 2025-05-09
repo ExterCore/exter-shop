@@ -5,9 +5,9 @@ id = 0
 Citizen.CreateThread(function()
     for k, v in pairs(Config.Shops) do
         for a, b in pairs(v.coords) do
-            if Config.Text == 'textui2' then           
-                if v.type == 'job' then 
-                    if v.jobName == '' then 
+            if Config.Text == 'textui2' then
+                if v.type == 'job' then
+                    if v.jobName == '' then
                         reqJob = 'all'
                     else
                         reqJob = v.jobName
@@ -25,19 +25,22 @@ Citizen.CreateThread(function()
                     keyNum = 38,
                     key = "E",
                     text = "Selling Point",
-                    theme = "green", 
+                    theme = "green",
                     job = reqJob,
                     triggerData = {
                         triggerName = "exter-shop:openShop",
-                        args = {name = v.name, label = v.label, categories = v.categories, type = v.type}
+                        args = {
+                            name = v.name,
+                            label = v.label,
+                            categories = v.categories,
+                            type = v.type
+                        }
                     }
                 })
             end
         end
     end
 end)
-
-
 
 if Config.UseTextUI then
     Citizen.CreateThread(function()
@@ -48,10 +51,16 @@ if Config.UseTextUI then
                 for a, b in pairs(v.coords) do
                     local dist = #(playerCoords - vector3(b.coords.x, b.coords.y, b.coords.z))
                     if dist <= 3 then
-                        if Config.Text == 'textui1' then 
+                        if Config.Text == 'textui1' then
                             sleep = 0
-                            item = {["item"] = {[1] = {name = "Open"}}}
-                            exports["exter-text"]:openTextUi(item,b.coords,3)
+                            item = {
+                                ["item"] = {
+                                    [1] = {
+                                        name = "Open"
+                                    }
+                                }
+                            }
+                            exports["exter-text"]:openTextUi(item, b.coords, 3)
                             if IsControlJustPressed(0, 38) then
                                 openShop(v.name, v.label, v.categories, v.type)
                             end
@@ -66,7 +75,9 @@ end
 
 local pedSpawned = false
 function createPeds()
-    if pedSpawned then return end
+    if pedSpawned then
+        return
+    end
     for k, v in pairs(Config.Shops) do
         local pedHash2 = type(v.pedHash) == "number" and v.pedHash or joaat(v.pedHash)
         RequestModel(pedHash2)
@@ -83,30 +94,28 @@ function createPeds()
             pedSpawned = true
             if not Config.UseTextUI then
                 if Config.Target == "ox" then
-                    exports['ox_target']:addLocalEntity(b.ped, {
-                        {
-                            name = v.name,
-                            label = v.label,
-                            icon = 'fa-solid fa-basket-shopping',
-                            distance = 3.0,
-                            groups = v.type == "job" and { [v.jobName] = 0 } or nil,
-                            onSelect = function()
-                                openShop(v.name, v.label, v.categories, v.type)
-                            end
-                        }
-                    })
+                    exports['ox_target']:addLocalEntity(b.ped, {{
+                        name = v.name,
+                        label = v.label,
+                        icon = 'fa-solid fa-basket-shopping',
+                        distance = 3.0,
+                        groups = v.type == "job" and {
+                            [v.jobName] = 0
+                        } or nil,
+                        onSelect = function()
+                            openShop(v.name, v.label, v.categories, v.type)
+                        end
+                    }})
                 elseif Config.Target == "qb" then
                     exports['qb-target']:AddTargetEntity(b.ped, {
-                        options = {
-                            {
-                                label = v.label,
-                                icon = 'fa-solid fa-basket-shopping',
-                                job = v.type == "job" and v.jobName or nil,
-                                action = function()
-                                    openShop(v.name, v.label, v.categories, v.type)
-                                end
-                            }
-                        },
+                        options = {{
+                            label = v.label,
+                            icon = 'fa-solid fa-basket-shopping',
+                            job = v.type == "job" and v.jobName or nil,
+                            action = function()
+                                openShop(v.name, v.label, v.categories, v.type)
+                            end
+                        }},
                         distance = 3.0
                     })
                 end
@@ -118,7 +127,9 @@ function createPeds()
 end
 
 function deletePeds()
-    if not pedSpawned then return end
+    if not pedSpawned then
+        return
+    end
     for k, v in pairs(Config.Shops) do
         for a, b in pairs(v.coords) do
             DeletePed(b.ped)
@@ -151,15 +162,17 @@ Citizen.CreateThread(function()
 end)
 
 AddEventHandler('onResourceStop', function(resourceName)
-    if GetCurrentResourceName() ~= resourceName then return end
+    if GetCurrentResourceName() ~= resourceName then
+        return
+    end
     deletePeds()
 end)
 
-RegisterNUICallback("close",function()
+RegisterNUICallback("close", function()
     SetNuiFocus(false, false)
 end)
 
-RegisterNUICallback("pay",function(data)
+RegisterNUICallback("pay", function(data)
     TriggerServerEvent("exter-shop:pay", data)
 end)
 
@@ -178,7 +191,15 @@ function openShop(name, label, category, type)
         })
     end
     SetNuiFocus(true, true)
-    SendNUIMessage({action = "openShop", name = name, label = label, categories = categories, type = type, resourceName = GetCurrentResourceName(),folder= Config.InventoryFolder})
+    SendNUIMessage({
+        action = "openShop",
+        name = name,
+        label = label,
+        categories = categories,
+        type = type,
+        resourceName = GetCurrentResourceName(),
+        folder = Config.InventoryFolder
+    })
 end
 
 RegisterNetEvent('exter-shop:openShop')
@@ -187,19 +208,22 @@ AddEventHandler('exter-shop:openShop', function(data)
 end)
 
 RegisterNUICallback('addToBasket', function(data)
-    -- if type(data.license) == 'table' then
-    --     for k, v in ipairs(data.license) do
-    --         if not QBCore.Functions.GetPlayerData().metadata["licences"][license] then
-    --             QBCore.Functions.Notify("Missing a " ..  license .. " license for certain products", "error")
-    --             return
-    --         end
-    --     end
-    -- elseif data.license ~= nil and data.license ~= "undefined" then
-    --     if not QBCore.Functions.GetPlayerData().metadata["licences"][data.license] then
-    --         QBCore.Functions.Notify("Missing a " ..  data.license .. " license for certain products", "error")
-    --         return
-    --     end
-    -- end
+    if Config.RequireLicense then
+        if type(data.license) == 'table' then
+            for k, license in ipairs(data.license) do
+                if not QBCore.Functions.GetPlayerData().metadata["licences"][license] then
+                    QBCore.Functions.Notify("Missing a " .. license .. " license for certain products", "error")
+                    return
+                end
+            end
+        elseif data.license ~= nil and data.license ~= "undefined" then
+            if not QBCore.Functions.GetPlayerData().metadata["licences"][data.license] then
+                QBCore.Functions.Notify("Missing a " .. data.license .. " license for certain products", "error")
+                return
+            end
+        end
+    end
+
     if json.encode(basket) == "{}" or json.encode(basket) == "[]" then
         table.insert(basket, {
             name = data.name,
@@ -208,7 +232,10 @@ RegisterNUICallback('addToBasket', function(data)
             amount = 1,
             label = data.label
         })
-        SendNUIMessage({action = "updateBasket", basket = basket})
+        SendNUIMessage({
+            action = "updateBasket",
+            basket = basket
+        })
     else
         local napacaz = napacaz(data.name)
         if napacaz == "insert" then
@@ -219,7 +246,10 @@ RegisterNUICallback('addToBasket', function(data)
                 amount = 1,
                 label = data.label
             })
-            SendNUIMessage({action = "updateBasket", basket = basket})
+            SendNUIMessage({
+                action = "updateBasket",
+                basket = basket
+            })
         end
     end
 end)
@@ -233,7 +263,10 @@ RegisterNUICallback('addBasketJob', function(data)
             amount = 1,
             label = data.label
         })
-        SendNUIMessage({action = "updateBasketJob", basket = basketJob})
+        SendNUIMessage({
+            action = "updateBasketJob",
+            basket = basketJob
+        })
     else
         local napacazJob = napacazJob(data.name)
         if napacazJob == "insert" then
@@ -244,7 +277,10 @@ RegisterNUICallback('addBasketJob', function(data)
                 amount = 1,
                 label = data.label
             })
-            SendNUIMessage({action = "updateBasketJob", basket = basketJob})
+            SendNUIMessage({
+                action = "updateBasketJob",
+                basket = basketJob
+            })
         end
     end
 end)
@@ -254,7 +290,10 @@ function napacaz(name)
         if v.name == name then
             basket[k].amount = basket[k].amount + 1
             basket[k].totalPrice = basket[k].perPrice * basket[k].amount
-            SendNUIMessage({action = "updateBasket", basket = basket})
+            SendNUIMessage({
+                action = "updateBasket",
+                basket = basket
+            })
             return "update"
         end
     end
@@ -266,7 +305,10 @@ function napacazJob(name)
         if v.name == name then
             basketJob[k].amount = basketJob[k].amount + 1
             basketJob[k].totalPrice = basketJob[k].perPrice * basketJob[k].amount
-            SendNUIMessage({action = "updateBasketJob", basket = basketJob})
+            SendNUIMessage({
+                action = "updateBasketJob",
+                basket = basketJob
+            })
             return "update"
         end
     end
@@ -278,7 +320,10 @@ RegisterNUICallback('addBasketMore', function(data)
         if v.name == data.name then
             basket[k].amount = basket[k].amount + 1
             basket[k].totalPrice = basket[k].perPrice * basket[k].amount
-            SendNUIMessage({action = "updateBasket", basket = basket})
+            SendNUIMessage({
+                action = "updateBasket",
+                basket = basket
+            })
         end
     end
 end)
@@ -288,7 +333,10 @@ RegisterNUICallback('addBasketMoreJob', function(data)
         if v.name == data.name then
             basketJob[k].amount = basketJob[k].amount + 1
             basketJob[k].totalPrice = basketJob[k].perPrice * basketJob[k].amount
-            SendNUIMessage({action = "updateBasketJob", basket = basketJob})
+            SendNUIMessage({
+                action = "updateBasketJob",
+                basket = basketJob
+            })
         end
     end
 end)
@@ -299,10 +347,16 @@ RegisterNUICallback('removeOneBasket', function(data)
             if basket[k].amount > 1 then
                 basket[k].amount = basket[k].amount - 1
                 basket[k].totalPrice = basket[k].perPrice * basket[k].amount
-                SendNUIMessage({action = "updateBasket", basket = basket})
+                SendNUIMessage({
+                    action = "updateBasket",
+                    basket = basket
+                })
             else
                 basket[k] = nil
-                SendNUIMessage({action = "updateBasket", basket = basket})
+                SendNUIMessage({
+                    action = "updateBasket",
+                    basket = basket
+                })
             end
         end
     end
@@ -314,10 +368,16 @@ RegisterNUICallback('removeOneBasketJob', function(data)
             if basketJob[k].amount > 1 then
                 basketJob[k].amount = basketJob[k].amount - 1
                 basketJob[k].totalPrice = basketJob[k].perPrice * basketJob[k].amount
-                SendNUIMessage({action = "updateBasketJob", basket = basketJob})
+                SendNUIMessage({
+                    action = "updateBasketJob",
+                    basket = basketJob
+                })
             else
                 basketJob[k] = nil
-                SendNUIMessage({action = "updateBasketJob", basket = basketJob})
+                SendNUIMessage({
+                    action = "updateBasketJob",
+                    basket = basketJob
+                })
             end
         end
     end
@@ -327,7 +387,10 @@ RegisterNUICallback('deleteItemFromBasket', function(data)
     for k, v in pairs(basket) do
         if v.name == data.name then
             basket[k] = nil
-            SendNUIMessage({action = "updateBasket", basket = basket})
+            SendNUIMessage({
+                action = "updateBasket",
+                basket = basket
+            })
         end
     end
 end)
@@ -336,7 +399,10 @@ RegisterNUICallback('deleteItemFromBasketJob', function(data)
     for k, v in pairs(basketJob) do
         if v.name == data.name then
             basketJob[k] = nil
-            SendNUIMessage({action = "updateBasketJob", basket = basketJob})
+            SendNUIMessage({
+                action = "updateBasketJob",
+                basket = basketJob
+            })
         end
     end
 end)
@@ -351,8 +417,9 @@ end)
 
 function hasLicense(licenses, playerLicenses)
     for _, license in ipairs(licenses) do
-        if playerLicenses[license] then return true end
+        if playerLicenses[license] then
+            return true
+        end
     end
     return false
 end
-
