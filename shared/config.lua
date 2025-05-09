@@ -1,12 +1,15 @@
 Config = {}
-Config.UseTextUI = true --change it to false if you want to use the third eye
+Config.UseTextUI = false --change it to false if you want to use the third eye
+
 Config.InventoryFolder = "nui://qb-inventory/html/images/"
-Config.Text = "textui2" -- Leave this blank if you use it third eye
-Config.Target = "ox" -- qb or ox
 --ox nui://ox_inventory/web/images/
 --qs nui://qs-inventory/html/images/
 
-Config.OldInv = "qb" --if you are using qb inventory and if you are using ox before pa write ox here if not you don't need to write anything
+Config.Text = "textui2" -- Leave this blank if you use it third eye
+
+Config.Target = "qb" -- qb or ox
+
+Config.RequireLicense = true -- ubah ke false jika ingin menonaktifkan pengecekan lisensi
 
 Config.ServerCallbacks = {}
 
